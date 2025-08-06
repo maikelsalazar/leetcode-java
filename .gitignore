@@ -1,0 +1,16 @@
+# Maven
+/target/
+
+# Compile class files
+*.class
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
