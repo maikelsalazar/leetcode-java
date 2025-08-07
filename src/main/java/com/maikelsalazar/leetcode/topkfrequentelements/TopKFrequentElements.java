@@ -46,6 +46,7 @@ public class TopKFrequentElements {
             frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
         }
 
+        @SuppressWarnings("unchecked")
         List<Integer>[] buckets = new List[numbers.length + 1];
         for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
             int frequency = entry.getValue();
