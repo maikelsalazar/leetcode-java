@@ -1,26 +1,19 @@
 package com.maikelsalazar.leetcode.productofarrayexceptself;
 
-import java.util.Arrays;
-
 public class ProductOfArrayExceptSelf {
     public int[] bruteForce(int[] numbers) {
-        if (numbers == null) {
-            return null;
-        }
-
-        if (numbers.length < 2) {
-            return new int[] { 1 };
-        }
+        if (numbers == null) return null;
+        if (numbers.length == 0) return new int[] {};
+        if (numbers.length == 1) return new int[] { 1 };
 
         int[] answer = new int[numbers.length];
 
         for (int i = 0; i < numbers.length; i++) {
             answer[i] = 1;
             for (int j = 0; j < numbers.length; j++) {
-                if (i == j) {
-                    continue;
+                if (i != j) {
+                    answer[i] *= numbers[j];
                 }
-                answer[i] *= numbers[j];
             }
         }
 
@@ -28,14 +21,10 @@ public class ProductOfArrayExceptSelf {
     }
 
     public int[] productExceptSelf(int[] numbers) {
-        if (numbers == null) {
-            return null;
-        }
-
-        if (numbers.length < 2) {
-            return new int[] { 1 };
-        }
-
+        if (numbers == null) return null;
+        if (numbers.length == 0) return new int[] {};
+        if (numbers.length == 1) return new int[] { 1 };
+        
         int[] answer = new int[numbers.length];
 
         int prefixProduct = 1;
